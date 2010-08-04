@@ -1,5 +1,13 @@
 %h1 New post
 
-# %= render 'form'
-# 
-# %= link_to 'Back', posts_path
+= form_for @post do |f|
+  .field
+    = f.label :title
+    %br
+    = f.text_field :title
+  .field
+    = f.label :body
+    %br
+    = f.text_area :body
+  .field
+    = f.submit
