@@ -1,9 +1,8 @@
 class CreatePosts < ActiveRecord::Migration
   def self.up
     create_table :posts do |t|
-      t.string :post
+      t.string :title
       t.text :body
-      t.references :post
 
       t.timestamps
     end
