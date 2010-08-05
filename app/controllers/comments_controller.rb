@@ -1,14 +1,25 @@
 class CommentsController < ApplicationController
   
   def new
-    @comment = Post.new
+    @post = Post.find(params[:post_id])
+    @comment = Comment.new
   end 
   
   def create
-    @comment = Post.create(params[:post])
+    @post = Post.find(params[:post_id])
+    @comment = Comment.new(params[:comment].merge(:post => @post))
+    # if @comment.save
+    #       @comments
+    # else
+    #     render "new"
   end
   
   def show
-    @comment = Post.find(params[:id])
+    @comment = Comment.find(params[:id])
   end
+  
+  def index
+    @comment = Comment.all
+  end
+  
 end

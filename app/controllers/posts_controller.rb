@@ -18,7 +18,4 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
   
-  def recup
-    @comments = Post.comment
-  end
 end
