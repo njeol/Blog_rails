@@ -5,6 +5,9 @@
 
 %p Text
 = @post.body
+
+= render @comments
+
 %br
 = link_to 'Posts List', posts_path 
 %br

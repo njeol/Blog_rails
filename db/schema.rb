@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20100804141842) do
   create_table "comments", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text "body"
   end
 
   create_table "posts", :force => true do |t|
