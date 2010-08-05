@@ -6,7 +6,10 @@
 %p Text
 = @post.body
 
-%b
+%br
 = link_to 'Posts List', posts_path 
 %br
-= link_to 'Commenter', new_comment_path
+= link_to 'Commenter', new_post_comment_path(@post)
+%br
+- if @comments
+	= render @comments
