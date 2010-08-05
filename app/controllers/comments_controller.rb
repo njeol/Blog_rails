@@ -8,10 +8,11 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = Comment.new(params[:comment].merge(:post => @post))
-    # if @comment.save
-    #       @comments
-    # else
-    #     render "new"
+    if @comment.save
+      redirect_to @post
+    else
+      render "new"
+    end
   end
   
   def show
@@ -19,7 +20,8 @@ class CommentsController < ApplicationController
   end
   
   def index
-    @comment = Comment.all
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments
   end
   
 end
