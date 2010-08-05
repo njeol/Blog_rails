@@ -11,5 +11,4 @@
 %br
 = link_to 'Commenter', new_post_comment_path(@post)
 %br
-- if @comments
-	= render @comments
+= link_to 'Afficher tous les commentaires', post_comments_path(@post)
